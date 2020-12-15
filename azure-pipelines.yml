@@ -22,7 +22,6 @@ steps:
 
 variables:
 - group: 15-Dec
-
 steps:
 - task: AndroidSigning@3
   inputs:
