@@ -6,9 +6,6 @@
 pool:
   vmImage: 'macOS-latest'
 
-variables:
-  - group: 15-Dec
-
 steps:
 - task: Gradle@2
   inputs:
@@ -23,16 +20,6 @@ steps:
     tasks: 'assembleDebug test'
   displayName: gradlew assembleDebug test
 
-- task: AndroidSigning@3
-  inputs:
-    apkFiles: '**/*.apk' 
-    apksign: true
-    apksignerKeystoreFile: 'production.keystore'
-    apksignerKeystorePassword: $(keystore.password)
-    apksignerKeystoreAlias: $(key.alias)
-    apksignerKeyPassword: $(key.password)
-    apksignerArguments: --out $(outputDirectory)/app.release.apk
-    zipalign: true
 
 - task: CopyFiles@2
   inputs:
