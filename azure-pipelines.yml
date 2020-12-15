@@ -6,6 +6,9 @@
 pool:
   vmImage: 'macOS-latest'
 
+variables:
+  - group: android-build-variables
+
 steps:
 - task: Gradle@2
   inputs:
