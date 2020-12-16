@@ -30,6 +30,6 @@ steps:
 - task: PublishBuildArtifacts@1
   inputs:
     pathToPublish: '$(build.artifactStagingDirectory)'
-    artifactName: 'drop'
+    artifactName: 'apk'
     artifactType: 'container'
   displayName: Publish artifacts
